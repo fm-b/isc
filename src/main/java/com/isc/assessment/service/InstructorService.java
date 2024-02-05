@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.isc.assessment.exception.CourseNotFoundException;
 import com.isc.assessment.exception.InstructorNotFoundException;
+import com.isc.assessment.exception.StudentNotFoundException;
 import com.isc.assessment.model.Course;
 import com.isc.assessment.model.Instructor;
 import com.isc.assessment.repository.CourseRepository;
@@ -37,7 +38,9 @@ public class InstructorService {
     }
 
     public void deleteInstructor(Long instructorId) {
-        instructorRepository.deleteById(instructorId);
+        instructorRepository.findById(instructorId)
+                .orElseThrow(() -> new InstructorNotFoundException("Instructor not found"));
+                instructorRepository.deleteById(instructorId);
     }
 
     public void addCourseForInstructor(Long instructorId, Long courseId) {

@@ -29,6 +29,8 @@ public class CourseService {
     }
 
     public void deleteCourse(Long courseId) {
+        courseRepository.findById(courseId)
+                .orElseThrow(() -> new CourseNotFoundException("Course not found"));
         courseRepository.deleteById(courseId);
     }
 

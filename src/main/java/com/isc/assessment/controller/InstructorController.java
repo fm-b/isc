@@ -56,12 +56,9 @@ public class InstructorController {
     }
 
 
-
     @PostMapping("/add-course-for-instructor")
     public ResponseEntity<String> addCourseForInstructor(@RequestBody AddCourseDto addCourseDto) {
         instructorService.addCourseForInstructor(addCourseDto.getInstructorId(), addCourseDto.getCourseId());
         return new ResponseEntity<>(HttpStatus.CREATED);
-   
-
     }
 }
