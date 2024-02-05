@@ -1,0 +1,197 @@
+{
+	"info": {
+		"_postman_id": "2968f9d5-9da5-443d-b398-77db6690284c",
+		"name": "isc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "17581675",
+		"_collection_link": "https://www.postman.com/restless-shuttle-872514/workspace/isc/collection/17581675-2968f9d5-9da5-443d-b398-77db6690284c?action=share&source=collection_link&creator=17581675"
+	},
+	"item": [
+		{
+			"name": "get -all-students",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/students"
+			},
+			"response": []
+		},
+		{
+			"name": "get-all-instructors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/instructors"
+			},
+			"response": []
+		},
+		{
+			"name": "get-all-courses",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/courses"
+			},
+			"response": []
+		},
+		{
+			"name": "student-get-by-id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/students/1"
+			},
+			"response": []
+		},
+		{
+			"name": "instructor-get-by-id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/instructors/134234"
+			},
+			"response": []
+		},
+		{
+			"name": "get-course-by-id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/courses/3"
+			},
+			"response": []
+		},
+		{
+			"name": "delete-student-by-id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/api/students/3"
+			},
+			"response": []
+		},
+		{
+			"name": "add-student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"studentId\" : 56497,\n    \"name\": \"Foo Bar\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/students/add"
+			},
+			"response": []
+		},
+		{
+			"name": "add-instructor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"instructorId\" : 85236,\n    \"name\": \"Prof Smith\",\n    \"email\" : \"test@test.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/instructors/add"
+			},
+			"response": []
+		},
+		{
+			"name": "add-course",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"courseNumber\" : 96325,\n    \"name\":\"Java\",\n    \"description\":\"Java Prgramming\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/courses/add"
+			},
+			"response": []
+		},
+		{
+			"name": "add-course-for-instructor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"instructorId\" : 4,\n    \"courseId\" : 6\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/instructors/add-course-for-instructor"
+			},
+			"response": []
+		},
+		{
+			"name": "choose-course",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"studentId\" : 1,\n    \"instructorId\" : 4,\n    \"courseId\" : 6 \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/students/choose-course-by-student"
+			},
+			"response": []
+		},
+		{
+			"name": "get-courses-by-instructor",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"studentId\" : 1,\n    \"instructorId\" : 4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/students/get-instructor-courses-for-students"
+			},
+			"response": []
+		}
+	]
+}
